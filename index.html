@@ -19,7 +19,7 @@
     <script src="js/slides.min.js" type="text/javascript"></script>
 
     <!-- Fonts and Material Icons -->
-    <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons" />
+    <!--<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons" />-->
     <!-- <style> -->
     <style>
         @font-face {
@@ -41,12 +41,27 @@
             font-family: 'AvenirLTStd-Roman';
             src: url('fonts/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirLTStd-Roman.otf') format('opentype'), url('fonts/AvenirLTStd-Roman.woff') format('woff'), url('fonts/AvenirLTStd-Roman.ttf') format('truetype'), url('fonts/AvenirLTStd-Roman.svg#AvenirLTStd-Roman') format('svg');
         }
+
+        .activeMenu {
+            text-decoration: underline;
+        }
+        .menuSize{
+            font-size:1.3em !important;
+        }
     </style>
+    <script>
+        $(document).ready(function () {
+            $('ul li a').click(function () {
+                $('li a').removeClass("activeMenu");
+                $(this).addClass("activeMenu");
+            });
+        });
+    </script>
 </head>
-<body class="slides horizontal simplifiedMobile animated">
+<body class="slides horizontal simplifiedMobile animated" style="font-family:AvenirLTStd-Roman !important">
 
     <!-- SVG Library -->
-    <!--<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
         <symbol id="logo" viewBox="0 0 106 31"><title>QuickWordz</title></symbol>
 
@@ -80,9 +95,9 @@
 
         <symbol id="sound-on" viewBox="0 0 18 18"><path d="M8.5,0.1C8.1-0.1,7.7,0,7.4,0.2L3.7,3H2C0.9,3,0,3.9,0,5v6c0,1.1,0.9,2,2,2h1.7l3.7,2.8C7.6,15.9,7.8,16,8,16 c0.2,0,0.3,0,0.4-0.1C8.8,15.7,9,15.4,9,15V1C9,0.6,8.8,0.3,8.5,0.1z M7,13l-2.4-1.8C4.4,11.1,4.2,11,4,11l-2,0l0-6h2 c0.2,0,0.4-0.1,0.6-0.2L7,3V13z M11.7,9.9l0.7,1.9C13.9,11.2,15,9.7,15,8c0-1.7-1.1-3.2-2.7-3.8l-0.7,1.9C12.5,6.4,13,7.2,13,8C13,8.9,12.5,9.6,11.7,9.9z M12.2,1.1l-0.3,2C14.3,3.5,16,5.6,16,8s-1.8,4.5-4.2,4.9l0.3,2C15.6,14.3,18,11.4,18,8C18,4.6,15.6,1.7,12.2,1.1z" /></symbol>
 
-        <symbol id="sound-off" viewBox="0 0 18 18"><path d="M15.9,8l1.8-1.8c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-1.8,1.8l-1.8-1.8c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L13.1,8l-1.8,1.8 c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.8-1.8l1.8,1.8c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L15.9,8z M8.5,0.1C8.1-0.1,7.7,0,7.4,0.2L3.7,3H2C0.9,3,0,3.9,0,5v6c0,1.1,0.9,2,2,2h1.7l3.7,2.8C7.6,15.9,7.8,16,8,16 c0.2,0,0.3,0,0.4-0.1C8.8,15.7,9,15.4,9,15V1C9,0.6,8.8,0.3,8.5,0.1z M7,13l-2.4-1.8C4.4,11.1,4.2,11,4,11l-2,0l0-6h2 c0.2,0,0.4-0.1,0.6-0.2L7,3V13z" /></symbol>-->
-    <!-- social -->
-    <!--<symbol id="apple" viewBox="-1 1 24 24"><path d="M17.6 13.8c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.3-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-.9 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 1 2.7-1.5 3.7-2.9c1.2-1.7 1.6-3.3 1.7-3.4-.1-.1-3.2-1.3-3.2-4.9zm-3.1-9c.8-1 1.4-2.4 1.2-3.8-1.2 0-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z" /></symbol>
+        <symbol id="sound-off" viewBox="0 0 18 18"><path d="M15.9,8l1.8-1.8c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-1.8,1.8l-1.8-1.8c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L13.1,8l-1.8,1.8 c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.8-1.8l1.8,1.8c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L15.9,8z M8.5,0.1C8.1-0.1,7.7,0,7.4,0.2L3.7,3H2C0.9,3,0,3.9,0,5v6c0,1.1,0.9,2,2,2h1.7l3.7,2.8C7.6,15.9,7.8,16,8,16 c0.2,0,0.3,0,0.4-0.1C8.8,15.7,9,15.4,9,15V1C9,0.6,8.8,0.3,8.5,0.1z M7,13l-2.4-1.8C4.4,11.1,4.2,11,4,11l-2,0l0-6h2 c0.2,0,0.4-0.1,0.6-0.2L7,3V13z" /></symbol>
+        social
+        <symbol id="apple" viewBox="-1 1 24 24"><path d="M17.6 13.8c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.3-4.4-2.4-1.9-.2-3.6 1.1-4.6 1.1-.9 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 1 2.7-1.5 3.7-2.9c1.2-1.7 1.6-3.3 1.7-3.4-.1-.1-3.2-1.3-3.2-4.9zm-3.1-9c.8-1 1.4-2.4 1.2-3.8-1.2 0-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z" /></symbol>
 
         <symbol id="dribbble" viewBox="0 0 24 24"><path d="M12 0c-6.7 0-12 5.3-12 12s5.3 12 12 12 12-5.3 12-12-5.3-12-12-12zm7.9 5.7c1.3 1.7 2.1 3.9 2.3 6.1-.4-.1-2.4-.4-4.7-.4-.8 0-1.5 0-2.3.1 0-.1-.1-.3-.3-.5l-.7-1.5c3.7-1.4 5.3-3.4 5.7-3.8zm-7.9-3.8c2.5 0 4.9.9 6.7 2.5-.3.4-1.9 2.3-5.2 3.6-1.6-2.9-3.3-5.3-3.7-5.9.6-.1 1.4-.2 2.2-.2zm-4.4 1c.4.6 2.1 3 3.7 5.8-4.4 1.2-8.2 1.2-9.2 1.2h-.1c.8-3.1 2.9-5.6 5.6-7zm-5.7 9.1v-.3h.3c1.2 0 5.6-.1 10.1-1.5l.8 1.6c-.1 0-.3 0-.4.1-5.1 1.6-7.9 6-8.3 6.7-1.6-1.7-2.5-4.1-2.5-6.6zm10.1 10.1c-2.3 0-4.4-.8-6.1-2.1.3-.5 2.4-4.4 7.9-6.3 1.3 3.6 2 6.7 2.1 7.6-1.2.6-2.6.8-3.9.8zm5.7-1.8c-.1-.8-.7-3.6-2-7.1.7-.1 1.3-.1 2-.1 2.1 0 3.7.4 4.1.5-.3 2.8-1.8 5.2-4.1 6.7z" /></symbol>
 
@@ -116,7 +131,7 @@
 
         <symbol id="youtube" viewBox="0 0 24 24"><path d="M23.6 6.3c-.3-1.2-1.4-2.2-2.6-2.3-3-.3-6-.3-9-.3s-6 0-9 .3c-1.2.1-2.3 1.1-2.6 2.3-.4 1.8-.4 3.8-.4 5.7 0 1.9 0 3.9.4 5.7.3 1.2 1.4 2.2 2.6 2.3 3 .3 6 .3 9 .3s6 0 9-.3c1.3-.1 2.3-1.1 2.6-2.4.4-1.7.4-3.7.4-5.6 0-1.9 0-3.9-.4-5.7zm-14.1 9v-6.6l6.5 3.3-6.5 3.3z" /></symbol>
 
-    </svg>-->
+    </svg>
     <!-- Panel Top #05 -->
     <nav class="panel top">
         <div class="sections desktop">
@@ -128,12 +143,12 @@
             </div>
             <div class="center">
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#EmailSummaries">Email Summaries</a></li>
-                    <li><a href="#AI">AI Driven</a></li>
-                    <li><a href="#EmailProviders">Multiple Email Providers</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#download">Download</a></li>
+                    <li><a class="activeMenu menuSize" href="#">Home</a></li>
+                    <li><a class="menuSize" href="#EmailSummaries">Email Summaries</a></li>
+                    <li><a class="menuSize" href="#AI">AI Driven</a></li>
+                    <li><a class="menuSize" href="#EmailProviders">Multiple Email Providers</a></li>
+                    <li><a class="menuSize" href="#pricing">Pricing</a></li>
+                    <li><a class="menuSize" href="#download">Download</a></li>
                 </ul>
             </div>
             <!--<div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="https://freehtml5.co/slides" target="_blank">Get App</a></div>-->
@@ -150,15 +165,15 @@
         <div class="content">
             <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
             <ul class="mainMenu margin-top-3">
-                <li><a href="#">Home</a></li>
-                <li><a href="#EmailSummaries">Email Summaries</a></li>
-                <li><a href="#AI">AI Driven</a></li>
-                <li><a href="#EmailProviders">Multiple Email Providers</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#download">Download</a></li>
+                <li><a class="activeMenu menuSize" href="#">Home</a></li>
+                <li><a class="menuSize" href="#EmailSummaries">Email Summaries</a></li>
+                <li><a class="menuSize" href="#AI">AI Driven</a></li>
+                <li><a class="menuSize" href="#EmailProviders">Multiple Email Providers</a></li>
+                <li><a class="menuSize" href="#pricing">Pricing</a></li>
+                <li><a class="menuSize" href="#download">Download</a></li>
             </ul>
             <ul class="subMenu small opacity-8">
-                <li><a href="#">FAQ</a></li>
+                <li><a class="activeMenu" href="#">FAQ</a></li>
                 <li><a href="#">License</a></li>
                 <li><a href="#">Terms & Conditions</a></li>
                 <li><a href="#">Privacy Policy</a></li>
@@ -186,7 +201,7 @@
                                 <!--<a class="button blue gradient ae-3 fromCenter cropLeft">Get Started</a><a class="button white ae-4 fromCenter">Learn more</a>-->
                             </li>
                             <li class="col-6-12">
-                                <img class="ae-4" width="605" src="assets/img/login.png" alt="iPhones Thumbnail" data-action="zoom" />
+                                <img class="" src="assets/img/login.png" alt="iPhones Thumbnail" data-action="zoom" />
                             </li>
                         </ul>
                     </div>
@@ -202,40 +217,48 @@
         <div class="content">
             <div class="container">
                 <div class="wrap">
-
+                    <!--<div class="fix-12-12">
+                            <ul class="grid">
+                                <li class="col-6-12 left">
+                                    <h1 class="ae-2 fromLeft"> </h1>
+                                    <p class="ae-3 fromLeft"><span class="opacity-8"></span></p>
+                                    <ul class="tabs controller uppercase bold ae-4 fromCenter" data-slider-id="60-1">
+                        <li class="selected">Krabi Island</li>
+                        <li>Community</li>
+                        <li>Surfing</li>
+                    </ul>
+                                </li>
+                                <li class="col-6-12 left ae-5 fromCenter">
+                                    <ul class="slider animated margin-top-4" data-slider-id="60-1">
+                                        <li class="selected fromCenter">
+                                            <img class="wide" src="assets/img/1 and 3.png" alt="" data-action="zoom" />
+                                        </li>
+                                        <li class="fromCenter">
+                            <div class="popupTrigger videoThumbnail shadow rounded" data-popup-id="60-2">
+                                <img class="wide" src="assets/img/gallery-60-2.jpg" alt="Video Thumbnail" />
+                            </div>
+                        </li>
+                        <li class="fromCenter">
+                            <div class="popupTrigger videoThumbnail shadow rounded" data-popup-id="60-3">
+                                <img class="wide" src="assets/img/gallery-60-3.jpg" alt="Video Thumbnail" />
+                            </div>
+                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>-->
                     <div class="fix-12-12">
-                        <ul class="grid">
-                            <li class="col-6-12 left">
-                                <h1 class="ae-2 fromLeft">Email content is summarized into just a few words while still preserving its gist </h1>
-                                <p class="ae-3 fromLeft"><span class="opacity-8">Summaries are generated automatically and instantly as you receive your email. So you don't have to wait for the summaries to appear after you've received the mail in your usual inbox. Need to see the actual email content? No problem, QuickWordz will give you an option to view the actual email content that was sent. You can also reply to emails directly from QuickWordz without having to switch to your email app. You can completely use QuickWordz as an alternative to your regular email app. Its just more efficient</span></p>
-                                <!--<ul class="tabs controller uppercase bold ae-4 fromCenter" data-slider-id="60-1">
-                                    <li class="selected">Krabi Island</li>
-                                    <li>Community</li>
-                                    <li>Surfing</li>
-                                </ul>-->
+                        <ul class="flex fixedSpaces verticalCenter reverse">
+                            <li class="col-6-12 left middle">
+                                <h1 class="ae-1 fromLeft">Email content is summarized into just a few words while still preserving its gist</h1>
+                                <p class="ae-2 fromLeft"><span class="opacity-8">Summaries are generated automatically and instantly as you receive your email. So you don't have to wait for the summaries to appear after you've received the mail in your usual inbox. Need to see the actual email content? No problem, QuickWordz will give you an option to view the actual email content that was sent. You can also reply to emails directly from QuickWordz without having to switch to your email app. You can completely use QuickWordz as an alternative to your regular email app. Its just more efficient</span></p>
+                                <!--<a class="button blue gradient ae-3 fromCenter cropLeft">Get Started</a><a class="button white ae-4 fromCenter">Learn more</a>-->
                             </li>
-                            <!--<li class="col-6-12 left ae-5 fromCenter">
-                                <ul class="slider animated margin-top-4" data-slider-id="60-1">
-                                    <li class="selected fromCenter">
-                                        <div class="popupTrigger videoThumbnail shadow rounded" data-popup-id="60-1">
-                                            <img class="wide" src="assets/img/gallery-60-1.jpg" alt="Video Thumbnail" />
-                                        </div>
-                                    </li>
-                                    <li class="fromCenter">
-                                        <div class="popupTrigger videoThumbnail shadow rounded" data-popup-id="60-2">
-                                            <img class="wide" src="assets/img/gallery-60-2.jpg" alt="Video Thumbnail" />
-                                        </div>
-                                    </li>
-                                    <li class="fromCenter">
-                                        <div class="popupTrigger videoThumbnail shadow rounded" data-popup-id="60-3">
-                                            <img class="wide" src="assets/img/gallery-60-3.jpg" alt="Video Thumbnail" />
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>-->
+                            <li class="col-6-12">
+                                <img class="" src="assets/img/2.png" alt="iPhones Thumbnail" data-action="zoom" />
+                            </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -244,7 +267,7 @@
 
 
     <!-- Popup Video -->
-    <div class="popup autoplay" data-popup-id="60-1">
+    <!--<div class="popup autoplay" data-popup-id="60-1">
         <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
         <div class="content">
             <div class="container">
@@ -257,11 +280,9 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
+    </div>-->
     <!-- Popup Video -->
-    <div class="popup autoplay" data-popup-id="60-2">
+    <!--<div class="popup autoplay" data-popup-id="60-2">
         <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
         <div class="content">
             <div class="container">
@@ -274,11 +295,9 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
+    </div>-->
     <!-- Popup Video -->
-    <div class="popup autoplay" data-popup-id="60-3">
+    <!--<div class="popup autoplay" data-popup-id="60-3">
         <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
         <div class="content">
             <div class="container">
@@ -291,16 +310,14 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
+    </div>-->
     <!-- Slide 3 (#27) -->
     <section class="slide fade-6 kenBurns" data-name="AI">
         <div class="content">
             <div class="container">
                 <div class="wrap">
 
-                    <div class="fix-12-12">
+                    <!--<div class="fix-12-12">
                         <ul class="flex verticalCenter">
                             <li class="col-5-12 cell-27">
                                 <div class="fix-4-12">
@@ -334,8 +351,19 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>-->
+                    <div class="fix-12-12">
+                        <ul class="flex fixedSpaces verticalCenter reverse">
+                            <li class="col-6-12 left middle">
+                                <h1 class="ae-1 fromLeft">Read concise AI generated summaries of your emails in just 60 words !</h1>
+                                <p class="ae-2 fromLeft"><span class="opacity-8">Get more productive with the way you see your emails. Did you know that people spend around 25% of their mobile usage time reading emails ? Emails can be very long and most often the actual content that you are interested in can be summarized in just a few words. QuickWordz is here to help you reduce the time you spend reading long emails by giving you AI driven summaries of all your email content reduced by upto 80% !</span></p>
+                                <!--<a class="button blue gradient ae-3 fromCenter cropLeft">Get Started</a><a class="button white ae-4 fromCenter">Learn more</a>-->
+                            </li>
+                            <li class="col-6-12">
+                                <img class="" src="assets/img/1 and 3.png" alt="iPhones Thumbnail" data-action="zoom" />
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -389,36 +417,34 @@
         </div>
         <div class="background" style="background-image:url(assets/img/background/img-28.jpg)"></div>
     </section>-->
-
     <!-- Slide 5 (#91) -->
     <section class="slide fade-6 kenBurns" data-name="EmailProviders">
         <div class="content">
             <div class="container">
                 <div class="wrap">
+                    <div class="fix-12-12">
+                        <ul class="flex verticalCenter">
+                            <li class="col-5-12 cell-27">
+                                <div class="fix-8-12">
+                                    <ul class="slider clickable ae-1 fromAbove" data-slider-id="277-2">
+                                        <li class="selected"><img src="assets/img/s1.png" alt="Apple Watch Thumbnail" /></li>
+                                        <li><img src="assets/img/s2.png" alt="Apple Watch Thumbnail" /></li>
+                                        <li><img src="assets/img/s3.png" alt="Apple Watch Thumbnail" /></li>
+                                    </ul>
+                                    <ul class="controller dots ae-2 fromCenter margin-top-3" data-slider-id="277-2">
+                                        <li class="dot selected"></li>
+                                        <li class="dot"></li>
+                                        <li class="dot"></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="col-7-12 left">
+                                <h1 class="ae-2 fromRight">QuickWordz works with all the major email providers, Gmail, Yahoo, Outlook and the others</h1>
+                                <div class="ae-3 fromRight">
+                                    <p class="opacity-8">Integrate one or all of your email accounts with QuickWordz and it will act as a common inbox for all of them with summaries for their email content</p>
+                                </div>
 
-                    <div class="fix-12-12 toCenter">
-                        <div class="fix-7-12">
-                            <!--<p class="margin-bottom-2 ae-1"><span class="opacity-6">Case study</p>-->
-                            <h1 class="ae-2 huge fromAbove margin-bottom-2">QuickWordz works with all the major email providers, Gmail, Yahoo, Outlook and the others</h1>
-                            <!--<a href="#" class="button green gradient ae-3">Purchase</a>-->
-                        </div>
-                        <ul class="grid fixedSpaces left margin-top-10">
-                            <li class="col-12-12 col-tablet-1-2 col-phablet-1-1 ae-4 fromLeft">
-                                <!--<h3>Inspiration</h3>-->
-                                <p class="tiny opacity-6">Integrate one or all of your email accounts with QuickWordz and it will act as a common inbox for all of them with summaries for their email content</p>
                             </li>
-                            <!--<li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-5 fromLeft">
-                                <h3>Creativity</h3>
-                                <p class="tiny opacity-6">You don’t have to be “a creative” to be creative.</p>
-                            </li>
-                            <li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-6 fromLeft">
-                                <h3>Fashion</h3>
-                                <p class="tiny opacity-6">There is no such thing as simple. Simple is hard.</p>
-                            </li>
-                            <li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-7 fromLeft">
-                                <h3>Photography</h3>
-                                <p class="tiny opacity-6">Design makes what was once impossible possible.</p>
-                            </li>-->
                         </ul>
                     </div>
 
@@ -445,9 +471,9 @@
                                 </div>
                                 <div class="margin-top-3 margin-bottom-3 equalElement ae-6">
                                     <ul class="p tiny">
-                                        <li><strong>25 Free Images</strong></li>
-                                        <li class="opacity-7">Custom Domain</li>
-                                        <li class="opacity-7">24/7 Customer Support</li>
+                                        <li><strong>1 Email Account</strong></li>
+                                        <li class="opacity-7">Free for life time</li>
+                                        <!--<li class="opacity-7">24/7 Customer Support</li>-->
                                     </ul>
                                 </div>
                                 <a href="#" class="button blue gradient wide cropSides cropBottom ae-7">Try Free</a>
@@ -460,10 +486,10 @@
                                 </div>
                                 <div class="margin-top-3 margin-bottom-3 equalElement ae-7">
                                     <ul class="p tiny">
-                                        <li><strong>60 Free Images</strong></li>
-                                        <li><strong>Mobile-Optimized</strong></li>
-                                        <li><strong>No Transaction Fees</strong></li>
-                                        <li class="opacity-8">Custom Domain</li>
+                                        <li><strong>3 Email Accounts</strong></li>
+                                        <!--<li><strong>Mobile-Optimized</strong></li>
+                                        <li><strong>No Transaction Fees</strong></li>-->
+                                        <li class="opacity-8">Free for life time</li>
                                         <li class="opacity-8">24/7 Customer Support</li>
                                     </ul>
                                 </div>
@@ -477,12 +503,12 @@
                                 </div>
                                 <div class="margin-top-3 margin-bottom-3 equalElement ae-8">
                                     <ul class="p tiny">
-                                        <li><strong>60 Free Images</strong></li>
-                                        <li><strong>Mobile-Optimized</strong></li>
-                                        <li><strong>No Transaction Fees</strong></li>
-                                        <li><strong>Unlimited Projects</strong></li>
-                                        <li class="opacity-8">Custom Domain</li>
+                                        <li><strong>Unlimited Email Accounts</strong></li>
+                                        <!--<li><strong>Mobile-Optimized</strong></li>
+                                        <li><strong>No Transaction Fees</strong></li>-->
+                                        <li class="opacity-8">Free for life time</li>
                                         <li class="opacity-8">24/7 Customer Support</li>
+                                        <li class="opacity-8">Customizable AI Engine</li>
                                     </ul>
                                 </div>
                                 <a href="#" class="button green gradient wide cropSides cropBottom ae-9">Purchase</a>
@@ -504,7 +530,7 @@
 
                     <div class="fix-6-12">
                         <h1 class="huge ae-1 margin-bottom-2">Download Mobile App</h1>
-                        <p class="hero ae-2 margin-bottom-3"><span class="opacity-8">Learning never exhausts the mind.</span></p>
+                        <p class="hero ae-2 margin-bottom-3"><span class="opacity-8">Switch to better emailing today</span></p>
 
                         <form action="#" autocomplete="off" class="slides-form margin-bottom-3">
                             <input type="email" class="ae-3" name="email" placeholder="E-mail address" />
