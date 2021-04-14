@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="../quickwordz/assets/img/icon.png" />
     <link rel="icon" type="image/png" href="https://bilalmir.github.io/quickwordz/quickwordz/assets/img/icon.png" />
     <!-- Compressed Styles -->
-    <link href="css/slides.min.css" rel="stylesheet" type="text/css">
+    <link href="css/slides.css" rel="stylesheet" type="text/css">
 
     <!-- jQuery 3.3.1 -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
@@ -43,13 +43,8 @@
             src: url('fonts/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'), url('fonts/AvenirLTStd-Roman.otf') format('opentype'), url('fonts/AvenirLTStd-Roman.woff') format('woff'), url('fonts/AvenirLTStd-Roman.ttf') format('truetype'), url('fonts/AvenirLTStd-Roman.svg#AvenirLTStd-Roman') format('svg');
         }
 
-        .activeMenu {
-            text-decoration: underline;
-        }
 
-        .menuSize {
-            font-size: 1.3em !important;
-        }
+
 
         .imgSize {
             height: 650px;
@@ -59,6 +54,9 @@
         .imgSz1 {
             height: 600px;
             object-fit: cover;
+        }
+
+        .cscroll {
         }
     </style>
     <script>
@@ -70,7 +68,7 @@
         });
     </script>
 </head>
-<body class="slides horizontal simplifiedMobile animated" style="font-family:AvenirLTStd-Roman !important">
+<body class="slides horizontal simplifiedMobile animated" style="font-family:AvenirLTStd-Roman !important;background-color:darkslategrey;">
 
     <!-- SVG Library -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -155,13 +153,13 @@
             </div>
             <div class="center">
                 <ul class="menu">
-                    <li><a class="activeMenu menuSize" href="#">Home</a></li>
-                    <li><a class="menuSize" href="#EmailSummaries">Email Summaries</a></li>
-                    <li><a class="menuSize" href="#AI">AI Driven</a></li>
-                    <li><a class="menuSize" href="#pricing">Plans</a></li>
-                    <li><a class="menuSize" href="#Support">Support Or Questions</a></li>
-                    <li><a class="menuSize" href="#policy">Privacy Policy</a></li>
-                    <li><a class="menuSize" href="#aboutus">About Us</a></li>
+                    <li><a class="activeMenu menuSize " href="#">Home</a></li>
+                    <li><a class="menuSize " href="#EmailSummaries">Email Summaries</a></li>
+                    <li><a class="menuSize " href="#AI">AI Driven</a></li>
+                    <li><a class="menuSize " href="#pricing">Plans</a></li>
+                    <li><a class="menuSize " href="#Support">Support Or Questions</a></li>
+                    <li><a class="menuSize " href="#policy">Privacy Policy</a></li>
+                    <li><a class="menuSize " href="#aboutus">About Us</a></li>
                 </ul>
             </div>
             <!--<div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="https://freehtml5.co/slides" target="_blank">Get App</a></div>-->
@@ -178,13 +176,13 @@
         <div class="content">
             <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
             <ul class="mainMenu margin-top-3">
-                <li><a class="activeMenu menuSize" href="#">Home</a></li>
-                <li><a class="menuSize" href="#EmailSummaries">Email Summaries</a></li>
-                <li><a class="menuSize" href="#AI">AI Driven</a></li>
-                <li><a class="menuSize" href="#pricing">Plans</a></li>
-                <li><a class="menuSize" href="#Support">Support Or Questions</a></li>
-                <li><a class="menuSize" href="#policy">Privacy Policy</a></li>
-                <li><a class="menuSize" href="#aboutus">About Us</a></li>
+                <li><a class="activeMenu menuSize " href="#">Home</a></li>
+                <li><a class="menuSize " href="#EmailSummaries">Email Summaries</a></li>
+                <li><a class="menuSize " href="#AI">AI Driven</a></li>
+                <li><a class="menuSize " href="#pricing">Plans</a></li>
+                <li><a class="menuSize " href="#Support">Support Or Questions</a></li>
+                <li><a class="menuSize " href="#policy">Privacy Policy</a></li>
+                <li><a class="menuSize " href="#aboutus">About Us</a></li>
             </ul>
             <!--<ul class="subMenu small opacity-8">
                 <li><a class="activeMenu" href="#">FAQ</a></li>
@@ -511,9 +509,10 @@
                                 <div class="ae-5"><span class="currency">Free + $2.99</span></div>
                                 <div class="ae-5">
                                     <h6 class="uppercase bold small opacity-4">
-                                        (In local currency equivalent) per month
                                         First 14 days free then $2.99 USD/month billed per month
-
+                                    </h6>
+                                    <h6 class="uppercase bold small opacity-4">
+                                        (In local currency equivalent) per month
                                     </h6>
                                 </div>
                                 <div class="margin-top-3 margin-bottom-3 equalElement ae-6">
@@ -534,8 +533,10 @@
                                 <div class="ae-6"><span class="currency">Free + $2.49</span> </div>
                                 <div class="ae-6">
                                     <h6 class="uppercase bold small opacity-4">
-                                        (in local currency equivalent) per month
                                         First 14 days free then $2.49 USD/month billed at beginning of each 6 months period
+                                    </h6>
+                                    <h6 class="uppercase bold small opacity-4">
+                                        (in local currency equivalent) per month
                                     </h6>
                                 </div>
                                 <div class="margin-top-3 margin-bottom-3 equalElement ae-7">
@@ -556,8 +557,10 @@
                                 <div class="ae-6"><span class="currency">Free + $1.99</span> </div>
                                 <div class="ae-7">
                                     <h6 class="uppercase bold small opacity-4">
-                                        (in local currency equivalent) per month
                                         First 14 days free then $1.99 USD/month billed at beginning of each 12 months period
+                                    </h6>
+                                    <h6 class="uppercase bold small opacity-4">
+                                        (in local currency equivalent) per month
                                     </h6>
                                 </div>
                                 <div class="margin-top-3 margin-bottom-3 equalElement ae-8">

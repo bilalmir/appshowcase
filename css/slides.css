@@ -895,6 +895,7 @@ p.uppercase, .p.uppercase,
 .dot:active:after,
 .dot.selected:after {
   opacity: 1;
+  
   -webkit-transform: scale(1.675);
           transform: scale(1.675);
 }
@@ -1276,9 +1277,10 @@ p.uppercase, .p.uppercase,
   background: #202020;
   color: #fff;
   z-index: 10;
-  overflow: hidden;
+  overflow:hidden;
+  margin-top:86px !important;
 }
-.slide.active {
+.slide.active.cscroll {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
@@ -1934,6 +1936,7 @@ html.mobile .showForMobileInline {
 }
 .panel .sections .menu li a:hover {
   opacity: 1;
+  text-decoration:underline;
 }
 .panel .sections .menu.uppercase li {
   font-size: 12px;
